@@ -2,35 +2,39 @@ const { stdin } = require("process");
 
 let connection;
 
-const handleUserInput = function (key) {
+const handleUserInput = function(key) {
   if (key === '\u0003') {
     process.exit();
   }
   
   if (key === 'w' || key === 'W') {
-    connection.write("Move: up")
+    connection.write("Move: up");
   }
 
   if (key === 'a' || key === 'A') {
-    connection.write("Move: left")
+    connection.write("Move: left");
   }
 
   if (key === 's' || key === 'S') {
-    connection.write("Move: down")
+    connection.write("Move: down");
   }
 
   if (key === 'd' || key === 'D') {
-    connection.write("Move: right")
+    connection.write("Move: right");
   }
 
-  if (key) {
-    connection.write("Say: sssuper")
+  if (key === 'f' || key === 'F') { //Sends message
+    connection.write("Say: On a roll!");
   }
-}
 
-const setupInput = function (conn) {
+  if (key === 'l' || key === 'L') { //Sends message
+    connection.write("Say: Yikes!");
+  }
+};
+
+const setupInput = function(conn) {
   const stdin = process.stdin;
-  connection = conn
+  connection = conn;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
   stdin.resume();
