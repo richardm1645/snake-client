@@ -7,20 +7,24 @@ const handleUserInput = function (key) {
     process.exit();
   }
   
-  if (key === 'w') {
+  if (key === 'w' || key === 'W') {
     connection.write("Move: up")
   }
 
-  if (key === 'a') {
+  if (key === 'a' || key === 'A') {
     connection.write("Move: left")
   }
 
-  if (key === 's') {
+  if (key === 's' || key === 'S') {
     connection.write("Move: down")
   }
 
-  if (key === 'd') {
+  if (key === 'd' || key === 'D') {
     connection.write("Move: right")
+  }
+
+  if (key) {
+    connection.write("Say: sssuper")
   }
 }
 
