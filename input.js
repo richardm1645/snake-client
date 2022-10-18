@@ -9,8 +9,8 @@ const handleUserInput = function(key) {
   
   if (key === 'w' || key === 'W') {
     connection.write("Move: up");
-  }
-
+  } 
+  
   if (key === 'a' || key === 'A') {
     connection.write("Move: left");
   }
